@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--mode="combined_mirror" -->
+<mapcache>
+   <cache name="disk" type="disk">
+      <base>/tmp</base>
+      <symlink_blank/>
+   </cache>
+
+   <source name="vmap0" type="wms">
+      <getmap>
+      <params>
+         <FORMAT>image/png</FORMAT>
+         <LAYERS>ADMIN</LAYERS>
+     <MAP>/etc/geo/map/wms.map</MAP>
+      </params>
+   </getmap>
+
+      <http>
+         <url>http://localhost:83/map/?</url>
+      </http>
+   </source>
+
+   <tileset name="test">
+      <source>vmap0</source>
+      <cache>disk</cache>
+      <grid>WGS84</grid>
+      <grid>g</grid>
+      <format>JPEG</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
+      <!--map>/etc/geo/map/wms.map</map-->
+   </tileset>
+
+
+   <default_format>JPEG</default_format>
+
+   <service type="wmts" enabled="true"/>
+   <service type="tms" enabled="true"/>
+   <service type="kml" enabled="true"/>
+   <service type="gmaps" enabled="true"/>
+   <service type="ve" enabled="true"/>
+   <service type="demo" enabled="true"/>
+
+   <errors>report</errors>
+   <lock_dir>/tmp</lock_dir>
+
+</mapcache>
