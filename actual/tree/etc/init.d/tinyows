@@ -32,7 +32,7 @@
 
     DAEMON=$PREFIX/bin/spawn-fcgi
 
-    DAEMON_OPTS=" -a 127.0.0.1 -p 9900 -F 4 -u tantang -U tantang -P $PID $PREFIX/lib/cgi-bin/tinyows"
+    DAEMON_OPTS=" -a 127.0.0.1 -p 9900 -F 4 -u www-data -U www-data -P $PID $PREFIX/lib/cgi-bin/tinyows"
 
     # DAEMON_OPTS=" -a 127.0.0.1 -p 9900 -F 4 -u www-data -U www-data -P
 

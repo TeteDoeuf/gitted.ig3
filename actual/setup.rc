@@ -1,3 +1,13 @@
+echo 'deb http://httpredir.debian.org/debian jessie main
+deb-src http://httpredir.debian.org/debian jessie main
+
+deb http://httpredir.debian.org/debian jessie-updates main
+deb-src http://httpredir.debian.org/debian jessie-updates main
+
+deb http://security.debian.org/ jessie/updates main
+deb-src http://security.debian.org/ jessie/updates main' > /etc/apt/sources.list
+
+
 aptitude update
 sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi libgd2-xpm-dev nginx gcc libxml2-dev libpq-dev flex make libfcgi-dev
 
