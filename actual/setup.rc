@@ -15,6 +15,8 @@ sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-f
 chmod +x /etc/init.d/mapserv
 /etc/init.d/mapserv start
 /etc/init.d/nginx start
+chmod +x /etc/init.d/tinyows
+chmod +x /etc/init.d/mapcache
 
 #installation de postgis postgres
 aptitude install postgresql postgresql-contrib postgis
@@ -23,13 +25,13 @@ su -c "createuser --superuser alex77" postgres
 su -c "createdb -E UTF8 -O alex77 basetd1" postgres
 su -c "createdb --encoding=UTF8 --owner=alex77 basetd1" postgres
 export PGPASSWORD='alex77'
-su postgres
-echo "ALTER USER alex77 WITH PASSWORD 'alex77';" | psql -d basetd1
-echo "CREATE EXTENSION postgis;" | psql -d basetd1
-exit
+#su postgres
+#echo "ALTER USER alex77 WITH PASSWORD 'alex77';" | psql -d basetd1
+#echo "CREATE EXTENSION postgis;" | psql -d basetd1
+#exit
 
 #Ajouter le shape
-shp2pgsql -I -s 4326 /var/lib/geo/raster/admin/ne_10m_admin_0_countries.shp admin_countries | psql -h 127.0.0.1 -U alex77 basetd1
+#shp2pgsql -I -s 4326 /var/lib/geo/raster/admin/ne_10m_admin_0_countries.shp admin_countries | psql -h 127.0.0.1 -U alex77 basetd1
 
 
 cd /usr/
