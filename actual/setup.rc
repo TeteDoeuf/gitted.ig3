@@ -9,7 +9,7 @@ deb-src http://security.debian.org/ jessie/updates main' > /etc/apt/sources.list
 
 
 aptitude update
-sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi libgd2-xpm-dev nginx gcc libxml2-dev libpq-dev flex make libfcgi-dev
+sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi libgd2-xpm-dev nginx gcc libxml2-dev libpq-dev flex make libfcgi-dev mapcache-cgi mapcache-tools
 
 #Démarrer map serveur et nginx
 chmod +x /etc/init.d/mapserv
@@ -46,3 +46,6 @@ make install
 cp tinyows /usr/lib/cgi-bin/
 /etc/init.d/tinyows start
 /usr/lib/cgi-bin/tinyows --check 
+
+export MAPCACHE_CONFIG_FILE=/etc/mapcache.xml
+/etc/init.d/mapcache start  
