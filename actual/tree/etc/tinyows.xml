@@ -1,0 +1,17 @@
+<tinyows online_resource="http://127.0.0.1/cgi-bin/tinyows"
+         schema_dir="/usr/local/tinyows/schema/">
+
+ <pg host="127.0.0.1" user="alex77" password="alex77" dbname="basetd1" port="5432"/>
+
+ <metadata name="TinyOWS Server"
+           title="TinyOWS Server - Demo Service" />
+
+ <layer retrievable="1"
+        writable="1"
+        ns_prefix="tows"
+        ns_uri="http://www.tinyows.org/"
+        name="admin_countries"
+        title="admin_countries" />
+
+</tinyows>
+
